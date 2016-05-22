@@ -1,0 +1,20 @@
+<ion-view view-title="Deskripsi">
+  <ion-content>
+  <div class="list card">
+  <div class="item item-avatar">
+    <img src="img/hiwata.png">
+    <h2>{{detail_buku.judul}}</h2>
+    <p>Rp.{{detail_buku.harga_sewa}}</p>
+  </div>
+
+  <div class="item item-image">
+    <img src="{{baseImageUrl + detail_buku.gambar}}">
+  </div>
+
+  	<div class="item item-body">
+    {{detail_buku.deskripsi}}
+	</div>
+
+</div>
+  </ion-content>
+</ion-view>

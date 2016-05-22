@@ -1,0 +1,26 @@
+<ion-view view-title="Komik Cewek">
+  <ion-content>
+    <div class="list">
+  </div>
+  <div class="text-center">
+     <button class="button button-large icon-left ion-chevron-left" ng-disabled="currentPage==1" ng-click="sebelumnya()">
+        sebelumnya
+      </button>
+      <button class="button button-large icon-right ion-chevron-right" ng-disabled="komik_cewek.length < 20" ng-click="selanjutnya()">
+        selanjutnya
+      </button>
+  </div>
+  	<div class="list">
+    <p align="center" class="item" ng-show="showLoader == true">
+      <img src="img/loader.gif" width="80" height="60"/>
+    </p>
+	</div>
+  <div class="list">
+    <a class="item item-thumbnail-left" ng-repeat="komik in komik_cewek" href="#/app/detail/{{komik.kode}}">
+         <img src="{{baseImageUrl + komik.gambar}}" width="80" height="60"/>
+        <h2>{{komik.judul}}</h2>
+        <p>Sewa : Rp.{{komik.harga_sewa}}</p>
+    </a>
+  </div>
+  </ion-content>
+</ion-view>

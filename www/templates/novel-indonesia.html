@@ -1,0 +1,26 @@
+<ion-view view-title="Novel Indonesia">
+  <ion-content>
+    <div class="list">
+  </div>
+  <div class="text-center">
+     <button class="button button-large icon-left ion-chevron-left" ng-disabled="currentPage==1" ng-click="sebelumnya()">
+        sebelumnya
+      </button>
+      <button class="button button-large icon-right ion-chevron-right" ng-disabled="novel_indo.length < 20" ng-click="selanjutnya()">
+        selanjutnya
+      </button>
+  </div>
+  	<div class="list">
+    <p align="center" class="item" ng-show="showLoader == true">
+      <img src="img/loader.gif" width="80" height="60"/>
+    </p>
+	</div>
+  <div class="list">
+    <a class="item item-thumbnail-left" ng-repeat="novel in novel_indo" href="#/app/detail/{{novel.kode}}">
+         <img src="{{baseImageUrl + novel.gambar}}" width="80" height="60"/>
+        <h2>{{novel.judul}}</h2>
+        <p>Sewa : Rp.{{novel.harga_sewa}}</p>
+    </a>
+  </div>
+  </ion-content>
+</ion-view>

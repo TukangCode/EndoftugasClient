@@ -1,0 +1,21 @@
+<ion-view view-title="Pencarian">
+  <ion-content>
+  	<div class="list list-inset">
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-enter="getCariBuku(cari)" ng-model="cari.key">
+		</label>
+    <button class="button button-full button-assertive" ng-click="getCariBuku(cari)">cari</button>
+    <p align="center" class="item" ng-show="showLoader == true">
+      <img src="img/loader.gif" width="80" height="60"/>
+    </p>
+	</div>
+  <div class="list">
+    <a class="item item-thumbnail-left" ng-repeat="cari in cari_buku" href="#/app/detail/{{cari.kode}}">
+         <img src="{{baseImageUrl + cari.gambar}}" width="80" height="60"/>
+        <h2>{{cari.judul}}</h2>
+        <p>Sewa : Rp.{{cari.harga_sewa}}</p>
+    </a>
+  </div>
+  </ion-content>
+</ion-view>
